@@ -13,8 +13,30 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
 }
 
+.square-top {
+  width: 7.4rem;
+  height: 4rem;
+  background-image: radial-gradient(circle, #ffff 30%, transparent 11%);
+  background-size: 0.8rem 0.8rem;
+  position: absolute;
+  top: 11rem;
+  right: 30rem;
+  z-index: 1;
+}
+.square-bottom {
+  width: 7.4rem;
+  height: 4rem;
+  background-image: radial-gradient(circle, #ffff 30%, transparent 11%);
+  background-size: 0.8rem 0.8rem;
+  position: absolute;
+  bottom: 11.5rem;
+  left: 29.6rem;
+  z-index: 1;
+  transform: rotate(90deg);
+}
 .wrapper {
   display: flex;
   flex-direction: column;
@@ -25,6 +47,7 @@
   height: auto;
   padding: 2rem;
   border-radius: 8px;
+  z-index: 10;
 }
 .img-text-section {
   display: flex;
@@ -55,7 +78,7 @@
 /********Formular Style******/
 .formular {
   margin-top: 1.5rem;
-  width: 90%;
+  width: 95%;
 }
 form {
   display: flex;
@@ -75,10 +98,11 @@ form button {
   width: 30%;
   background-image: linear-gradient(#ff354d 0%, #fe6108 100%);
   color: #fff;
-  transition: all 0.5s ease-in;
+  transition: all 0.5s ease-in-out;
   border-bottom-right-radius: 4px;
   border-top-right-radius: 4px;
   letter-spacing: 10%;
+  cursor: pointer;
 }
 .formular :is(input, button) {
   padding: 0.4rem;
@@ -94,13 +118,60 @@ button {
   opacity: 50%;
 }
 .formular + p {
-  font-size: 0.2rem;
+  font-size: 0.5rem;
   font-style: italic;
   margin-top: 1rem;
   color: #b7b7b7;
   letter-spacing: -1%;
 }
 button:hover {
-  cursor: pointer;
   background-image: linear-gradient(#ff354dbb 0%, #fe6208be 100%);
+}
+/*******RESPONSIVE DESIGN***********/
+
+@media screen and (max-width: 768px) {
+  .square-top {
+    width: 7.4rem;
+    height: 4rem;
+    background-image: radial-gradient(circle, #ffff 30%, transparent 11%);
+    background-size: 0.8rem 0.8rem;
+    position: absolute;
+    top: 11rem;
+    right: 6rem;
+    z-index: 1;
+  }
+  .square-bottom {
+    width: 7.4rem;
+    height: 4rem;
+    background-image: radial-gradient(circle, #ffff 30%, transparent 11%);
+    background-size: 0.8rem 0.8rem;
+    position: absolute;
+    bottom: 11.5rem;
+    left: 5.6rem;
+    z-index: 1;
+    transform: rotate(90deg);
+  }
+}
+@media screen and (max-width: 599px) {
+  .square-top {
+    width: 7.4rem;
+    height: 4rem;
+    background-image: radial-gradient(circle, #ffff 30%, transparent 11%);
+    background-size: 0.8rem 0.8rem;
+    position: absolute;
+    top: 4.9rem;
+    right: 0.3rem;
+    z-index: 1;
+  }
+  .square-bottom {
+    width: 7.4rem;
+    height: 4rem;
+    background-image: radial-gradient(circle, #ffff 30%, transparent 11%);
+    background-size: 0.8rem 0.8rem;
+    position: absolute;
+    bottom: 5.5rem;
+    left: -1.6rem;
+    z-index: 1;
+    transform: rotate(90deg);
+  }
 }
